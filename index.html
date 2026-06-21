@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Teatro Konoba — Zadar · Mediteranska pozornica okusa</title>
+<meta name="description" content="Teatro Konoba u Zadru — dalmatinska i mediteranska kuhinja servirana s flairom. Svaka scena novi okus, svako jelo predstava. 4.8★ · 531 recenzija." />
+<meta property="og:title" content="Teatro Konoba — Zadar" />
+<meta property="og:description" content="Mediteranska pozornica okusa u Zadru. Svaka scena novi okus." />
+<meta property="og:type" content="restaurant" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<style>
+  :root{
+    --ivory:#F7F2E9;
+    --ivory-2:#EFE7D8;
+    --paper:#FBF8F1;
+    --ink:#2A2520;
+    --ink-soft:#5C544A;
+    --rose:#C98B82;
+    --rose-deep:#B06F66;
+    --sea:#3E6E7E;
+    --sea-deep:#2C5460;
+    --line:rgba(42,37,32,.14);
+    --font-d:'Fraunces', Georgia, serif;
+    --font-b:'Inter', system-ui, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--font-b);font-weight:300;font-size:17px;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--font-d);font-weight:500;line-height:1.06;letter-spacing:-.01em}
+  ::selection{background:var(--rose);color:var(--paper)}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 30px}
+  .eyebrow{font-family:var(--font-b);font-weight:500;text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--sea)}
+
+  /* HEADER */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .5s,padding .5s,box-shadow .5s;padding:24px 0}
+  header.scrolled{background:rgba(247,242,233,.9);backdrop-filter:blur(10px);padding:14px 0;box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-family:var(--font-d);font-size:25px;letter-spacing:0;color:var(--ink)}
+  .brand b{font-weight:600}.brand span{color:var(--rose-deep);font-style:italic}
+  .navlinks{display:flex;gap:30px;list-style:none}
+  .navlinks a{font-size:11px;text-transform:uppercase;letter-spacing:.18em;color:var(--ink-soft);transition:color .3s}
+  .navlinks a:hover{color:var(--sea)}
+  .btn{display:inline-block;font-family:var(--font-b);font-weight:500;font-size:11px;text-transform:uppercase;letter-spacing:.18em;padding:13px 24px;border:1px solid var(--sea);color:var(--sea);background:transparent;cursor:pointer;transition:.35s;border-radius:2px}
+  .btn:hover{background:var(--sea);color:var(--paper)}
+  .btn-solid{background:var(--sea);color:var(--paper)}
+  .btn-solid:hover{background:var(--sea-deep);border-color:var(--sea-deep)}
+  .btn-rose{border-color:var(--rose-deep);color:var(--rose-deep)}
+  .btn-rose:hover{background:var(--rose-deep);color:var(--paper)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .burger span{width:26px;height:1.5px;background:var(--ink);display:block}
+
+  /* HERO SWIPER */
+  .hero{position:relative;height:100vh;min-height:640px}
+  .hero .swiper,.hero .swiper-wrapper,.hero .swiper-slide{height:100%}
+  .hero .slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1)}
+  .swiper-slide-active .slide-bg{animation:ken 7s ease-out forwards}
+  @keyframes ken{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+  .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(30,24,20,.25),rgba(30,24,20,.5))}
+  .hero-content{position:absolute;z-index:5;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px}
+  .hero-content .eyebrow{color:#EAD9C2;margin-bottom:22px}
+  .hero h1{font-size:clamp(48px,8.5vw,118px);color:#FBF8F1;font-weight:500;line-height:1}
+  .hero h1 em{font-style:italic;color:#EBC9A8}
+  .hero-sub{font-family:var(--font-d);font-style:italic;font-size:clamp(19px,2.4vw,28px);color:#F2E6D6;margin-top:20px;max-width:680px}
+  .hero-cta{margin-top:38px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+  .hero-cta .btn{border-color:#F2E6D6;color:#FBF8F1}
+  .hero-cta .btn:hover{background:#FBF8F1;color:var(--ink)}
+  .hero-cta .btn-solid{background:var(--rose-deep);border-color:var(--rose-deep);color:#fff}
+  .hero-cta .btn-solid:hover{background:#fff;color:var(--ink)}
+  .hero .swiper-pagination{bottom:34px!important}
+  .hero .swiper-pagination-bullet{background:#F2E6D6;opacity:.5;width:9px;height:9px}
+  .hero .swiper-pagination-bullet-active{opacity:1;background:#EBC9A8}
+
+  section{position:relative}
+  .pad{padding:120px 0}
+
+  /* STATS BAR */
+  .stats{background:var(--ink);color:var(--paper)}
+  .stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:center}
+  .stat .num{font-family:var(--font-d);font-size:clamp(40px,6vw,68px);color:#EBC9A8;font-weight:500;line-height:1}
+  .stat .lbl{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--ivory-2);margin-top:12px;opacity:.85}
+
+  /* MANIFEST */
+  .manifest{text-align:center;background:var(--paper)}
+  .manifest .inner{max-width:780px;margin:0 auto}
+  .manifest h2{font-size:clamp(32px,4.6vw,56px);margin:22px 0 26px;font-weight:500}
+  .manifest h2 em{font-style:italic;color:var(--rose-deep)}
+  .manifest p{font-size:19px;color:var(--ink-soft);line-height:1.85}
+  .manifest .sig{font-family:var(--font-d);font-style:italic;font-size:23px;color:var(--sea);margin-top:28px}
+
+  /* SCENE ROWS */
+  .scenes .menu-head{text-align:center;margin-bottom:74px}
+  .scenes .menu-head h2{font-size:clamp(34px,5vw,60px)}
+  .scene{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-bottom:96px}
+  .scene:nth-child(even) .scene-img{order:2}
+  .scene-img{overflow:hidden;border-radius:3px;aspect-ratio:5/4}
+  .scene-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+  .scene-img:hover img{transform:scale(1.05)}
+  .scene-txt .tag{font-family:var(--font-d);font-style:italic;font-size:20px;color:var(--rose-deep);margin-bottom:6px}
+  .scene-txt h3{font-size:clamp(28px,3.6vw,42px);margin-bottom:20px}
+  .scene-list{list-style:none}
+  .scene-list li{padding:13px 0;border-bottom:1px solid var(--line)}
+  .scene-list li b{font-family:var(--font-d);font-weight:600;font-size:19px;color:var(--ink);display:block}
+  .scene-list li span{font-size:15px;color:var(--ink-soft)}
+  .menu-note{text-align:center;color:var(--ink-soft);font-style:italic;font-family:var(--font-d);font-size:18px}
+
+  /* CHEF / STORY */
+  .story{background:var(--ivory-2)}
+  .story .split{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+  .story .imgwrap{overflow:hidden;border-radius:3px;aspect-ratio:4/5}
+  .story .imgwrap img{width:100%;height:100%;object-fit:cover}
+  .story h2{font-size:clamp(32px,4.6vw,54px);margin-bottom:22px}
+  .story p{color:var(--ink-soft);margin-bottom:18px}
+  .story .name{font-family:var(--font-d);font-style:italic;font-size:20px;color:var(--sea)}
+
+  /* DRAGGABLE GALLERY */
+  .gallery{background:var(--paper)}
+  .gallery .menu-head{text-align:center;margin-bottom:56px}
+  .gallery .menu-head h2{font-size:clamp(32px,4.6vw,56px)}
+  .drag-hint{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--ink-soft);margin-top:10px}
+  .gal-swiper{overflow:hidden;cursor:grab}
+  .gal-swiper:active{cursor:grabbing}
+  .gal-swiper .swiper-slide{width:clamp(280px,38vw,460px)}
+  .gal-swiper figure{overflow:hidden;border-radius:3px;aspect-ratio:3/4}
+  .gal-swiper img{width:100%;height:100%;object-fit:cover}
+
+  /* LOCATION */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch}
+  .loc-info h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:26px}
+  .loc-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .loc-row .k{min-width:120px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sea);padding-top:5px;font-weight:500}
+  .loc-row .v{color:var(--ink-soft)}
+  .loc-row .v a{color:var(--ink);border-bottom:1px solid var(--rose-deep)}
+  .hours{display:grid;grid-template-columns:1fr auto;gap:8px 20px}
+  .hours .d{color:var(--ink)}.hours .t{color:var(--ink-soft)}
+  .mapwrap{overflow:hidden;border-radius:3px;min-height:420px;border:1px solid var(--line)}
+  .mapwrap iframe{width:100%;height:100%;min-height:420px;border:0}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--ivory-2);padding:80px 0 40px;text-align:center}
+  footer .brand{font-size:34px;color:var(--paper);margin-bottom:14px}
+  footer .brand span{color:#EBC9A8}
+  footer .tag{font-family:var(--font-d);font-style:italic;color:#EBC9A8;font-size:20px;margin-bottom:30px}
+  footer .fcontact{margin-bottom:8px;color:var(--ivory-2)}
+  footer .fcontact a{color:var(--paper);border-bottom:1px solid #EBC9A8}
+  footer .fnav{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin:26px 0;list-style:none}
+  footer .fnav a{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ivory-2);opacity:.8}
+  footer .fnav a:hover{opacity:1;color:#EBC9A8}
+  footer .copy{font-size:12px;color:var(--ivory-2);opacity:.6;margin-top:24px}
+
+  /* mobile nav */
+  .mobnav{position:fixed;inset:0;background:rgba(247,242,233,.98);z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .4s}
+  .mobnav.open{opacity:1;pointer-events:all}
+  .mobnav a{font-family:var(--font-d);font-size:30px;color:var(--ink)}
+  .mobnav a:hover{color:var(--rose-deep)}
+
+  [data-reveal]{opacity:0;transform:translateY(28px)}
+
+  @media(max-width:900px){
+    .scene{grid-template-columns:1fr;gap:32px;margin-bottom:64px}
+    .scene:nth-child(even) .scene-img{order:0}
+    .story .split{grid-template-columns:1fr;gap:34px}
+    .loc-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media(max-width:680px){
+    body{font-size:16px}
+    .navlinks{display:none}.nav .btn{display:none}.burger{display:flex}
+    .pad{padding:78px 0}
+    .stats .row{grid-template-columns:1fr;gap:34px}
+    .hero{min-height:560px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    [data-reveal]{opacity:1!important;transform:none!important}
+    .swiper-slide-active .slide-bg{animation:none!important;transform:scale(1.05)!important}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="brand"><b>Teatro</b> <span>Konoba</span></a>
+    <ul class="navlinks">
+      <li><a href="#manifest">Predstava</a></li>
+      <li><a href="#scenes">Scene</a></li>
+      <li><a href="#story">Kuhinja</a></li>
+      <li><a href="#gallery">Galerija</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="btn btn-rose">Rezerviraj stol</a>
+    <button class="burger" id="burger" aria-label="Izbornik"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobnav" id="mobnav">
+  <a href="#manifest">Predstava</a>
+  <a href="#scenes">Scene</a>
+  <a href="#story">Kuhinja</a>
+  <a href="#gallery">Galerija</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#kontakt" class="btn btn-rose" style="margin-top:8px">Rezerviraj stol</a>
+</nav>
+
+<!-- HERO SWIPER -->
+<section class="hero" id="top">
+  <div class="swiper" id="heroSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=80')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1502301197179-65228ab57f78?auto=format&fit=crop&w=2000&q=80')"></div>
+        <div class="overlay"></div>
+      </div>
+      <div class="swiper-slide">
+        <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2000&q=80')"></div>
+        <div class="overlay"></div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="hero-content">
+    <span class="eyebrow">Zadar · Stari grad · Mediteranska konoba</span>
+    <h1>Pozornica je<br><em>postavljena</em>.</h1>
+    <p class="hero-sub">Dalmatinska kuhinja servirana s flairom — svaka scena novi okus, svako jelo predstava.</p>
+    <div class="hero-cta">
+      <a href="#kontakt" class="btn btn-solid">Rezerviraj stol</a>
+      <a href="#scenes" class="btn">Otkrij scene</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" style="padding:64px 0">
+  <div class="wrap">
+    <div class="row">
+      <div class="stat"><div class="num"><span data-count="4.8" data-dec="1">4.8</span> ★</div><div class="lbl">Prosječna ocjena gostiju</div></div>
+      <div class="stat"><div class="num"><span data-count="531">531</span></div><div class="lbl">Recenzija i preporuka</div></div>
+      <div class="stat"><div class="num"><span data-count="4">4</span></div><div class="lbl">Čina svake večere</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFEST -->
+<section class="manifest pad" id="manifest">
+  <div class="wrap inner">
+    <span class="eyebrow" data-reveal>Manifest</span>
+    <h2 data-reveal>Svjetlo dana, miris mora<br>i jelo koje <em>igra</em> glavnu ulogu.</h2>
+    <p data-reveal>Teatro je konoba u kojoj se kuhinja ponaša kao kazalište — samo bez tame. Naša pozornica je obasjana suncem Zadra: svjež ulov s plave, povrće iz okolnih polja, maslinovo ulje iz brda i vino koje pamti kamen. Sve ostalo je režija, ritam i mjera.</p>
+    <p data-reveal>Svako jelo dolazi kao nova scena — odmjereno, lijepo postavljeno, spremno da vas iznenadi. Sjednite na terasu, naručite prošek, i pustite da predstava traje koliko želite.</p>
+    <p class="sig" data-reveal>— Svako jelo je čin. Svaka večera predstava.</p>
+  </div>
+</section>
+
+<!-- SCENES -->
+<section class="scenes pad" id="scenes">
+  <div class="wrap">
+    <div class="menu-head">
+      <span class="eyebrow" data-reveal>Repertoar</span>
+      <h2 data-reveal>Predstava u četiri scene</h2>
+      <p class="menu-note" data-reveal style="margin-top:14px">Jelovnik prati sezonu i ulov. Cijene na meniju u konobi.</p>
+    </div>
+
+    <!-- Scene 1 -->
+    <div class="scene">
+      <div class="scene-img" data-reveal><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1100&q=80" alt="Predjela na pladnju" loading="lazy"></div>
+      <div class="scene-txt" data-reveal>
+        <p class="tag">Prva scena</p>
+        <h3>Predjela — uvertira</h3>
+        <ul class="scene-list">
+          <li><b>Pjat pršuta i sira</b><span>Dalmatinski pršut, paški sir, kapare i smokve u medu.</span></li>
+          <li><b>Carpaccio od orade</b><span>Tanko rezana orada, limun, maslinovo ulje, cvijet soli.</span></li>
+          <li><b>Dagnje na buzaru</b><span>Svježe dagnje, bijelo vino, češnjak, peršin, prepečenac.</span></li>
+          <li><b>Salata od hobotnice</b><span>Hobotnica, krumpir, crveni luk, kapari, vinski ocat.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scene 2 -->
+    <div class="scene">
+      <div class="scene-img" data-reveal><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1100&q=80" alt="Tjestenina s plodovima mora" loading="lazy"></div>
+      <div class="scene-txt" data-reveal>
+        <p class="tag">Druga scena</p>
+        <h3>Tjestenina i rižoto — zaplet</h3>
+        <ul class="scene-list">
+          <li><b>Crni rižoto</b><span>Sipa i njezino crnilo, parmezan, kap maslinovog ulja.</span></li>
+          <li><b>Njoki s gamberima</b><span>Domaći njoki, škampi, cherry rajčica, bosiljak.</span></li>
+          <li><b>Šurlice s tartufom</b><span>Tjestenina otoka, istarski tartuf, vrhnje, parmezan.</span></li>
+          <li><b>Brodet s palentom</b><span>Brodet od tri vrste ribe, mekana palenta, lovor.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scene 3 -->
+    <div class="scene">
+      <div class="scene-img" data-reveal><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1100&q=80" alt="Glavna jela s ribom" loading="lazy"></div>
+      <div class="scene-txt" data-reveal>
+        <p class="tag">Treća scena</p>
+        <h3>Glavna jela — vrhunac</h3>
+        <ul class="scene-list">
+          <li><b>Riba ispod peke</b><span>Bijela riba dana, krumpir, ružmarin, maslinovo ulje. Za dvoje.</span></li>
+          <li><b>Janjetina ispod peke</b><span>Sporo pečena janjetina, krumpir, biljke iznad Zadra.</span></li>
+          <li><b>Tuna s nara i sezama</b><span>Pečena tuna, glazura od nara, sezam, blitva na lešo.</span></li>
+          <li><b>Biftek na žaru</b><span>Zreli biftek, pečeno povrće, umak od crnog vina i timijana.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Scene 4 -->
+    <div class="scene">
+      <div class="scene-img" data-reveal><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1100&q=80" alt="Slastica na tanjuru" loading="lazy"></div>
+      <div class="scene-txt" data-reveal>
+        <p class="tag">Završna scena</p>
+        <h3>Slastice — poklon publici</h3>
+        <ul class="scene-list">
+          <li><b>Rožata</b><span>Tradicionalni dalmatinski kremasti desert s karamelom.</span></li>
+          <li><b>Smokve u prošeku</b><span>Pečene smokve, prošek, badem, domaći sladoled.</span></li>
+          <li><b>Topli čokoladni sufle</b><span>Tekuća srž tamne čokolade, naranča iz zagore.</span></li>
+          <li><b>Fritule s rogačem</b><span>Tople fritule, sirup od rogača, šećer u prahu.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story pad" id="story">
+  <div class="wrap split">
+    <div class="imgwrap" data-reveal>
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1100&q=80" alt="Kuhar priprema jelo u kuhinji Teatra" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow" data-reveal>Iza kulisa</span>
+      <h2 data-reveal>Kuhinja koja režira okus</h2>
+      <p data-reveal>U Teatru se kuha kao što se postavlja predstava — s mjerom, ritmom i poštovanjem prema sastojku. Najbolja riba ne traži puno; samo malo soli, ulja i pravo svjetlo da zablista.</p>
+      <p data-reveal>Ribu biramo na gradskoj ribarnici svako jutro, povrće dolazi s okolnih polja, a maslinovo ulje iz obiteljskih maslinika iznad Zadra. Ono što ne možemo nazvati domaćim — ne stavljamo na pozornicu.</p>
+      <p data-reveal>Dođite gladni, ostanite dugo. Svaka scena dolazi u svoje vrijeme.</p>
+      <p class="name" data-reveal>— Tim Teatro Konobe, Zadar</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery pad" id="gallery">
+  <div class="wrap">
+    <div class="menu-head">
+      <span class="eyebrow" data-reveal>Galerija</span>
+      <h2 data-reveal>Scene iz konobe</h2>
+      <p class="drag-hint" data-reveal>← Povucite za više →</p>
+    </div>
+  </div>
+  <div class="swiper gal-swiper" id="galSwiper" style="padding:0 30px">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=800&q=80" alt="Plated jelo" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1502301197179-65228ab57f78?auto=format&fit=crop&w=800&q=80" alt="Zadar zalazak sunca uz more" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" alt="Posluženo jelo" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" alt="Elegantan interijer" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80" alt="Svježa riba i plodovi mora" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Mediteransko jelo" loading="lazy"></figure></div>
+      <div class="swiper-slide"><figure><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80" alt="Tjestenina s plodovima mora" loading="lazy"></figure></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="pad" id="kontakt">
+  <div class="wrap loc-grid">
+    <div class="loc-info">
+      <span class="eyebrow" data-reveal>Rezervirajte stol</span>
+      <h2 data-reveal>Vidimo se u starom Zadru</h2>
+      <p data-reveal style="color:var(--ink-soft);margin-bottom:18px">Rezervacije primamo telefonom — najsigurniji način da osigurate svoje mjesto u prvom redu.</p>
+      <div class="loc-row" data-reveal><div class="k">Adresa</div><div class="v">Stari grad, Zadar, Hrvatska<br><a href="https://maps.google.com/maps?q=Teatro+Konoba+Zadar" target="_blank" rel="noopener">Otvori u kartama</a></div></div>
+      <div class="loc-row" data-reveal><div class="k">Rezervacije</div><div class="v"><a href="tel:+385957795142">+385 95 779 5142</a></div></div>
+      <div class="loc-row" data-reveal><div class="k">Ocjena</div><div class="v">4.8 ★ · 531 recenzija</div></div>
+      <div class="loc-row" data-reveal>
+        <div class="k">Radno vrijeme</div>
+        <div class="v"><div class="hours">
+          <span class="d">Ponedjeljak – Petak</span><span class="t">17:00 – 23:00</span>
+          <span class="d">Subota</span><span class="t">12:00 – 24:00</span>
+          <span class="d">Nedjelja</span><span class="t">12:00 – 23:00</span>
+        </div></div>
+      </div>
+      <a href="tel:+385957795142" class="btn btn-rose" data-reveal style="margin-top:26px">Nazovi i rezerviraj</a>
+    </div>
+    <div class="mapwrap" data-reveal>
+      <iframe src="https://maps.google.com/maps?q=Teatro+Konoba+Zadar&output=embed" loading="lazy" title="Karta — Teatro Konoba Zadar" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="brand"><b>Teatro</b> <span>Konoba</span></div>
+    <p class="tag">Svako jelo je čin.</p>
+    <p class="fcontact">Stari grad, Zadar · Hrvatska</p>
+    <p class="fcontact">Rezervacije: <a href="tel:+385957795142">+385 95 779 5142</a></p>
+    <ul class="fnav">
+      <li><a href="#manifest">Predstava</a></li>
+      <li><a href="#scenes">Scene</a></li>
+      <li><a href="#story">Kuhinja</a></li>
+      <li><a href="#gallery">Galerija</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+    <p class="copy">© 2026 Teatro Konoba, Zadar · Mediteranska pozornica okusa</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Lenis
+  var lenis;
+  if(!reduce && window.Lenis){
+    lenis=new Lenis({duration:1.15,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t));},smoothWheel:true});
+    function raf(t){lenis.raf(t);requestAnimationFrame(raf);}requestAnimationFrame(raf);
+    if(window.gsap&&window.ScrollTrigger){lenis.on('scroll',ScrollTrigger.update);}
+  }
+
+  // anchors
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href');if(id.length<2)return;
+      var el=document.querySelector(id);if(!el)return;
+      e.preventDefault();closeMob();
+      if(lenis)lenis.scrollTo(el,{offset:-56});else el.scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // header
+  var header=document.getElementById('header');
+  function onScroll(){if(window.scrollY>60)header.classList.add('scrolled');else header.classList.remove('scrolled');}
+  window.addEventListener('scroll',onScroll);onScroll();
+
+  // HERO swiper (fade + ken burns)
+  if(window.Swiper){
+    new Swiper('#heroSwiper',{
+      effect:'fade',fadeEffect:{crossFade:true},speed:1400,loop:true,
+      autoplay:reduce?false:{delay:4600,disableOnInteraction:false},
+      pagination:{el:'.hero .swiper-pagination',clickable:true},
+      allowTouchMove:false
+    });
+    new Swiper('#galSwiper',{
+      slidesPerView:'auto',spaceBetween:18,grabCursor:true,freeMode:true,
+      mousewheel:{forceToAxis:true}
+    });
+  }
+
+  // hero text intro
+  if(window.gsap&&!reduce){
+    gsap.from('.hero-content > *',{opacity:0,y:30,duration:1,stagger:.14,ease:'power3.out',delay:.3});
+  }
+
+  if(window.gsap&&window.ScrollTrigger&&!reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    // reveals
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.to(el,{opacity:1,y:0,duration:.85,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    // parallax on scene images
+    gsap.utils.toArray('.scene-img img').forEach(function(img){
+      gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:true}});
+    });
+    // count-up
+    gsap.utils.toArray('[data-count]').forEach(function(el){
+      var end=parseFloat(el.getAttribute('data-count'));
+      var dec=parseInt(el.getAttribute('data-dec')||'0',10);
+      var obj={v:0};
+      ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){
+        gsap.to(obj,{v:end,duration:1.8,ease:'power2.out',onUpdate:function(){el.textContent=obj.v.toFixed(dec);}});
+      }});
+    });
+  }
+
+  // mobile nav
+  var mob=document.getElementById('mobnav'),burger=document.getElementById('burger');
+  function closeMob(){mob.classList.remove('open');document.body.style.overflow='';}
+  burger.addEventListener('click',function(){
+    if(mob.classList.contains('open'))closeMob();
+    else{mob.classList.add('open');document.body.style.overflow='hidden';}
+  });
+  mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMob();});
+})();
+</script>
+</body>
+</html>
